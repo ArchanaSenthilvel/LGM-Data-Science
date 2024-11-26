@@ -1,0 +1,26 @@
+#TASK 4 - IMAGE TO PENCIL SKETCH USING PYTHON#
+
+
+
+
+import cv2
+
+# Rest of the code
+# Reading image data
+sketch = cv2.imread("redflower.png")
+
+# Converting image in grey scale
+grey_scale = cv2.cvtColor(sketch, cv2.COLOR_BGR2GRAY)
+cv2.imwrite("output.png", grey_scale)
+
+# Converting grey scale image into inverted image
+invert_sketch = cv2.bitwise_not(grey_scale)
+cv2.imwrite("output2.png", invert_sketch)
+
+# Converting inverted image into blur image
+blur_sketch = cv2.GaussianBlur(invert_sketch, (21,21),0)
+cv2.imwrite("output3.png", blur_sketch)
+
+# finale output
+sketch_filter = cv2.divide(grey_scale,invertedblur,scale=250.0)
+cv2.imwrite("flowers.png", sketch_filter)
