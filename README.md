@@ -1,1 +1,1 @@
-project
+LGM - Data Science project
